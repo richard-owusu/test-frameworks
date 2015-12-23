@@ -4,9 +4,14 @@
  */
 package com.richard.bookmark;
 
+import java.util.Collection;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  *
  * @author CNARIO
  */
-public class BookmarkRepository {
+public interface BookmarkRepository extends JpaRepository<Bookmark, Long> {
+
+    Collection<Bookmark> findByAccountUsername();
 }
